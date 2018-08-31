@@ -4,23 +4,17 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"strconv"
 	"strings"
 	"sync"
-	"syscall"
 	"time"
 
-	"github.com/AlecAivazis/survey"
-	multierror "github.com/hashicorp/go-multierror"
 	"github.com/MOZGIII/evans/cache"
 	"github.com/MOZGIII/evans/config"
 	"github.com/MOZGIII/evans/di"
-	"github.com/MOZGIII/evans/meta"
 	"github.com/MOZGIII/evans/usecase"
 	"github.com/MOZGIII/evans/usecase/port"
-	semver "github.com/ktr0731/go-semver"
-	updater "github.com/ktr0731/go-updater"
+	multierror "github.com/hashicorp/go-multierror"
 	isatty "github.com/mattn/go-isatty"
 	"github.com/mitchellh/copystructure"
 	"github.com/pkg/errors"
@@ -297,11 +291,6 @@ func (c *CLI) runAsCLI() int {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel() // for non-zero return value
 
-	checkUpdateErrCh := make(chan error, 1)
-	go func() {
-		checkUpdateErrCh <- checkUpdate(ctx, c.wcfg.cfg, c.cache)
-	}()
-
 	errCh := make(chan error)
 	go func() {
 		defer cancel()
@@ -352,12 +341,7 @@ func (c *CLI) runAsCLI() int {
 			c.Error(err)
 		}
 
-		cuErr := <-checkUpdateErrCh
-		if cuErr != nil {
-			c.Error(cuErr)
-		}
-
-		if err != nil || cuErr != nil {
+		if err != nil {
 			return 1
 		}
 	}
@@ -371,28 +355,9 @@ func (c *CLI) runAsREPL() int {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	checkUpdateErrCh := make(chan error, 1)
-	go func() {
-		checkUpdateErrCh <- checkUpdate(ctx, c.wcfg.cfg, c.cache)
-	}()
-
-	processUpdateErrCh := make(chan error, 1)
 	errCh := make(chan error)
 	go func() {
 		defer cancel()
-
-		// if AutoUpdate enabled, do update asynchronously
-		if c.wcfg.cfg.Meta.AutoUpdate {
-			go func() {
-				processUpdateErrCh <- c.processUpdate(ctx)
-			}()
-		} else {
-			err := c.processUpdate(ctx)
-			if err != nil {
-				errCh <- err
-				return
-			}
-		}
 
 		p, err := di.NewREPLInteractorParams(c.wcfg.cfg, DefaultCLIReader)
 		if err != nil {
@@ -435,83 +400,9 @@ func (c *CLI) runAsREPL() int {
 		}
 
 		cancel()
-
-		select {
-		case err = <-processUpdateErrCh:
-		case err = <-checkUpdateErrCh:
-		}
-
-		if err != nil {
-			c.Error(err)
-			return 1
-		}
 	}
 
 	return 0
-}
-
-// processUpdate checks new changes and updates Evans in accordance with user's selection.
-// if config.Meta.AutoUpdate enabled, processUpdate is called asynchronously.
-// other than, processUpdate is called synchronously.
-func (c *CLI) processUpdate(ctx context.Context) error {
-	if !c.cache.UpdateAvailable {
-		return nil
-	}
-
-	v := semver.MustParse(c.cache.LatestVersion)
-	if v.LessThan(meta.Version) || v.Equal(meta.Version) {
-		return cache.Clear()
-	}
-
-	m, err := newMeans(c.cache)
-	// if ErrUnavailable, user installed Evans by manually, ignore
-	if err == updater.ErrUnavailable {
-		// show update info at the end
-		return nil
-	} else if err != nil {
-		return errors.Wrapf(err, "failed to get means from cache (%s)", c.cache)
-	}
-
-	var w io.Writer
-	if c.wcfg.cfg.Meta.AutoUpdate {
-		w = ioutil.Discard
-
-		// if canceled, ignore and return
-		err := update(ctx, w, newUpdater(c.wcfg.cfg, meta.Version, m))
-		if errors.Cause(err) == context.Canceled {
-			return nil
-		}
-		return err
-	}
-
-	printUpdateInfo(c.ui.Writer(), c.cache.LatestVersion)
-
-	var yes bool
-	if err := survey.AskOne(&survey.Confirm{
-		Message: "update?",
-	}, &yes, nil); err != nil {
-		return errors.Wrap(err, "failed to get survey answer")
-	}
-	if !yes {
-		return nil
-	}
-
-	w = c.ui.Writer()
-
-	// if canceled, ignore and return
-	err = update(ctx, w, newUpdater(c.wcfg.cfg, meta.Version, m))
-	if errors.Cause(err) == context.Canceled {
-		return nil
-	} else if err != nil {
-		return errors.Wrap(err, "failed to update binary")
-	}
-
-	// restart Evans
-	if err := syscall.Exec(os.Args[0], os.Args, os.Environ()); err != nil {
-		return errors.Wrapf(err, "failed to exec the command: args=%s", os.Args)
-	}
-
-	return nil
 }
 
 func mergeConfig(cfg *config.Config, opt *options, proto []string) (*config.Config, error) {
