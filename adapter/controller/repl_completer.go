@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	prompt "github.com/c-bata/go-prompt"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 )
 
 type completer struct {

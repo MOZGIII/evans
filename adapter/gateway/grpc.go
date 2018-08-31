@@ -10,8 +10,8 @@ import (
 	"google.golang.org/grpc/connectivity"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/ktr0731/evans/config"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/config"
+	"github.com/MOZGIII/evans/entity"
 	multierror "github.com/ktr0731/go-multierror"
 	"github.com/pkg/errors"
 )

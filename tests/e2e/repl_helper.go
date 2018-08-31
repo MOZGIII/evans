@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/ktr0731/evans/adapter/controller"
-	"github.com/ktr0731/evans/tests/e2e/repl"
-	"github.com/ktr0731/evans/tests/helper"
+	"github.com/MOZGIII/evans/adapter/controller"
+	"github.com/MOZGIII/evans/tests/e2e/repl"
+	"github.com/MOZGIII/evans/tests/helper"
 )
 
 // replHelper has gateway.REPL and special fields for REPL-mode e2e testing.

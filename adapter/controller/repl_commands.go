@@ -5,8 +5,8 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/ktr0731/evans/entity"
-	"github.com/ktr0731/evans/usecase/port"
+	"github.com/MOZGIII/evans/entity"
+	"github.com/MOZGIII/evans/usecase/port"
 	"github.com/pkg/errors"
 )
 

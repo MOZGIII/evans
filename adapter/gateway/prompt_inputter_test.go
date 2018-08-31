@@ -6,10 +6,10 @@ import (
 
 	prompt "github.com/c-bata/go-prompt"
 	"github.com/jhump/protoreflect/dynamic"
-	"github.com/ktr0731/evans/adapter/internal/testhelper"
-	"github.com/ktr0731/evans/adapter/protobuf"
-	"github.com/ktr0731/evans/entity/testentity"
-	"github.com/ktr0731/evans/tests/helper"
+	"github.com/MOZGIII/evans/adapter/internal/testhelper"
+	"github.com/MOZGIII/evans/adapter/protobuf"
+	"github.com/MOZGIII/evans/entity/testentity"
+	"github.com/MOZGIII/evans/tests/helper"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 )

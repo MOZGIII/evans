@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ktr0731/evans/config"
+	"github.com/MOZGIII/evans/config"
 	"github.com/stretchr/testify/require"
 )
 

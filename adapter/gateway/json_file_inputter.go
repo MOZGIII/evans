@@ -5,8 +5,8 @@ import (
 	"io"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/ktr0731/evans/adapter/protobuf"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/adapter/protobuf"
+	"github.com/MOZGIII/evans/entity"
 	"github.com/pkg/errors"
 )
 

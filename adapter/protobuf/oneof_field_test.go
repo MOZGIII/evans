@@ -3,7 +3,7 @@ package protobuf
 import (
 	"testing"
 
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 	"github.com/stretchr/testify/require"
 )
 

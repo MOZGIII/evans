@@ -2,7 +2,7 @@ package helper
 
 import (
 	prompt "github.com/c-bata/go-prompt"
-	"github.com/ktr0731/evans/color"
+	"github.com/MOZGIII/evans/color"
 )
 
 // MockPrompt implements gateway.Prompter

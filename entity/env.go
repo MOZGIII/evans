@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ktr0731/evans/config"
+	"github.com/MOZGIII/evans/config"
 	"github.com/pkg/errors"
 )
 

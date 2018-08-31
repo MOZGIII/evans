@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ktr0731/evans/adapter/controller"
-	"github.com/ktr0731/evans/di"
-	"github.com/ktr0731/evans/meta"
-	"github.com/ktr0731/evans/tests/helper"
+	"github.com/MOZGIII/evans/adapter/controller"
+	"github.com/MOZGIII/evans/di"
+	"github.com/MOZGIII/evans/meta"
+	"github.com/MOZGIII/evans/tests/helper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

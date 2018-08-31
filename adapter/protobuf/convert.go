@@ -7,7 +7,7 @@ import (
 
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 	"github.com/jhump/protoreflect/desc"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 )
 
 // ConvertValue holds value and error of conversion

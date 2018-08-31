@@ -2,7 +2,7 @@ package port
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 )
 
 type DynamicBuilder interface {

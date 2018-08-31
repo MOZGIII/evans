@@ -5,8 +5,8 @@ import (
 
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/grpcreflect"
-	"github.com/ktr0731/evans/adapter/protobuf"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/adapter/protobuf"
+	"github.com/MOZGIII/evans/entity"
 	"github.com/ktr0731/grpc-web-go-client/grpcweb"
 	"github.com/ktr0731/grpc-web-go-client/grpcweb/grpcweb_reflection_v1alpha"
 	"github.com/pkg/errors"

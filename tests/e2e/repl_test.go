@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ktr0731/evans/di"
-	cmd "github.com/ktr0731/evans/tests/e2e/repl"
-	"github.com/ktr0731/evans/tests/helper"
+	"github.com/MOZGIII/evans/di"
+	cmd "github.com/MOZGIII/evans/tests/e2e/repl"
+	"github.com/MOZGIII/evans/tests/helper"
 	"github.com/stretchr/testify/assert"
 )
 

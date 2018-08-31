@@ -3,7 +3,7 @@ package gateway
 import (
 	"testing"
 
-	"github.com/ktr0731/evans/adapter/internal/testhelper"
+	"github.com/MOZGIII/evans/adapter/internal/testhelper"
 	"github.com/stretchr/testify/require"
 )
 

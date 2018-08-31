@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ktr0731/evans/meta"
+	"github.com/MOZGIII/evans/meta"
 	semver "github.com/ktr0731/go-semver"
 	updater "github.com/ktr0731/go-updater"
 	homedir "github.com/mitchellh/go-homedir"

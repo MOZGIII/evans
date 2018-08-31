@@ -1,6 +1,6 @@
 package helper
 
-import "github.com/ktr0731/evans/config"
+import "github.com/MOZGIII/evans/config"
 
 func TestConfig() *config.Config {
 	return config.Get()

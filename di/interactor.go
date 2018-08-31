@@ -3,8 +3,8 @@ package di
 import (
 	"io"
 
-	"github.com/ktr0731/evans/config"
-	"github.com/ktr0731/evans/usecase"
+	"github.com/MOZGIII/evans/config"
+	"github.com/MOZGIII/evans/usecase"
 )
 
 func NewCLIInteractorParams(cfg *config.Config, in io.Reader) (*usecase.InteractorParams, error) {

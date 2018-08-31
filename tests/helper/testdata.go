@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ktr0731/evans/adapter/parser"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/adapter/parser"
+	"github.com/MOZGIII/evans/entity"
 	"github.com/stretchr/testify/require"
 )
 

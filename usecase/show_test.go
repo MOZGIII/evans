@@ -3,10 +3,10 @@ package usecase
 import (
 	"testing"
 
-	"github.com/ktr0731/evans/adapter/presenter"
-	"github.com/ktr0731/evans/entity"
-	"github.com/ktr0731/evans/tests/helper"
-	"github.com/ktr0731/evans/usecase/port"
+	"github.com/MOZGIII/evans/adapter/presenter"
+	"github.com/MOZGIII/evans/entity"
+	"github.com/MOZGIII/evans/tests/helper"
+	"github.com/MOZGIII/evans/usecase/port"
 	"github.com/stretchr/testify/require"
 )
 

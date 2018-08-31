@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/jhump/protoreflect/desc"
-	"github.com/ktr0731/evans/adapter/internal/protoparser"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/adapter/internal/protoparser"
+	"github.com/MOZGIII/evans/entity"
 	"github.com/stretchr/testify/require"
 )
 

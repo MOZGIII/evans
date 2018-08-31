@@ -3,7 +3,7 @@ package testentity
 import (
 	"math/rand"
 
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 	"google.golang.org/grpc"
 )
 

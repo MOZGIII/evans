@@ -3,8 +3,8 @@ package usecase
 import (
 	"io"
 
-	"github.com/ktr0731/evans/entity"
-	"github.com/ktr0731/evans/usecase/port"
+	"github.com/MOZGIII/evans/entity"
+	"github.com/MOZGIII/evans/usecase/port"
 )
 
 func Package(params *port.PackageParams, outputPort port.OutputPort, env entity.Environment) (io.Reader, error) {

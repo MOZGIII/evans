@@ -2,8 +2,8 @@ package e2e
 
 import (
 	prompt "github.com/c-bata/go-prompt"
-	"github.com/ktr0731/evans/adapter/gateway"
-	"github.com/ktr0731/evans/tests/helper"
+	"github.com/MOZGIII/evans/adapter/gateway"
+	"github.com/MOZGIII/evans/tests/helper"
 )
 
 // SetPrompt replaces NewPrompt var by newPrompt which is prompter injected.

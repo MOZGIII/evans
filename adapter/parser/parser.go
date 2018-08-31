@@ -1,9 +1,9 @@
 package parser
 
 import (
-	"github.com/ktr0731/evans/adapter/internal/protoparser"
-	"github.com/ktr0731/evans/adapter/protobuf"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/adapter/internal/protoparser"
+	"github.com/MOZGIII/evans/adapter/protobuf"
+	"github.com/MOZGIII/evans/entity"
 )
 
 func ParseFile(filename []string, paths []string) ([]*entity.Package, error) {

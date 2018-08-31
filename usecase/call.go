@@ -7,8 +7,8 @@ import (
 	"os/signal"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/ktr0731/evans/entity"
-	"github.com/ktr0731/evans/usecase/port"
+	"github.com/MOZGIII/evans/entity"
+	"github.com/MOZGIII/evans/usecase/port"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/metadata"
 )

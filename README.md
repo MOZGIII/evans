@@ -10,7 +10,7 @@
 ```
 --- 
 
-[![CircleCI](https://circleci.com/gh/ktr0731/evans/tree/master.svg?style=svg)](https://circleci.com/gh/ktr0731/evans/tree/master)  
+Fork!
 
 ## Motivation
 Evans was created to use easier than other existing gRPC clients.  
@@ -27,7 +27,7 @@ above usecases is corresponding to Evans's two modes, REPL mode, and command-lin
 REPL mode is the solution for first usecase.  
 You can use it without thinking like package name, service name, RPC name, command usage, and so on because REPL mode has powerful completion!  
 
-proto file which read in demonstration and its implementation are available at [ktr0731/evans-demo](https://github.com/ktr0731/evans-demo).  
+proto file which read in demonstration and its implementation are available at [ktr0731/evans-demo](https://github.com/MOZGIII/evans-demo).  
 
 ## command-line mode
 ![Evans](./evans2.gif)  
@@ -56,7 +56,7 @@ Then, the command will be more clear.
 highly recommended methods are GitHub Releases or Homebrew because these can be software update automatically by the built-in feature in Evans.  
 
 ### from GitHub Releases
-please see [GitHub Releases](https://github.com/ktr0731/evans/releases).  
+please see [GitHub Releases](https://github.com/MOZGIII/evans/releases).  
 
 ### macOS
 ``` sh
@@ -67,7 +67,7 @@ $ brew install evans
 ### go get
 v1.10 or later required.  
 ``` sh
-$ go get github.com/ktr0731/evans
+$ go get github.com/MOZGIII/evans
 ```
 
 ## Usage

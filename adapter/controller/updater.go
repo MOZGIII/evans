@@ -9,9 +9,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ktr0731/evans/cache"
-	"github.com/ktr0731/evans/config"
-	"github.com/ktr0731/evans/meta"
+	"github.com/MOZGIII/evans/cache"
+	"github.com/MOZGIII/evans/config"
+	"github.com/MOZGIII/evans/meta"
 	semver "github.com/ktr0731/go-semver"
 	updater "github.com/ktr0731/go-updater"
 	"github.com/ktr0731/go-updater/brew"

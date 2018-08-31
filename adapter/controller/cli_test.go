@@ -3,7 +3,7 @@ package controller
 import (
 	"testing"
 
-	"github.com/ktr0731/evans/config"
+	"github.com/MOZGIII/evans/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

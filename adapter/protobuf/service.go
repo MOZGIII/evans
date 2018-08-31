@@ -2,7 +2,7 @@ package protobuf
 
 import (
 	"github.com/jhump/protoreflect/desc"
-	"github.com/ktr0731/evans/entity"
+	"github.com/MOZGIII/evans/entity"
 )
 
 type Service struct {

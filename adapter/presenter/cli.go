@@ -8,7 +8,7 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/jhump/protoreflect/dynamic"
-	"github.com/ktr0731/evans/usecase/port"
+	"github.com/MOZGIII/evans/usecase/port"
 )
 
 type marshaler interface {

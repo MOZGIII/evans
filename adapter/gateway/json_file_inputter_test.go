@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/golang/protobuf/jsonpb"
-	"github.com/ktr0731/evans/adapter/internal/testhelper"
-	"github.com/ktr0731/evans/adapter/protobuf"
+	"github.com/MOZGIII/evans/adapter/internal/testhelper"
+	"github.com/MOZGIII/evans/adapter/protobuf"
 	"github.com/stretchr/testify/require"
 )
 
